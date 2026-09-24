@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vuon Quy Nhơn</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app-shell">
+<header class="topbar">
+<div><div class="brand">Vuon Quy Nhơn</div><div class="subtitle">Translation &amp; Language Form</div></div>
+<button class="lang-switch" id="langSwitch" type="button"><span class="active">EN</span><span>VN</span></button>
+</header>
+<section class="progress-row"><span id="stepLabel">Step 1 of 3</span><span id="progressLabel">33% completed</span></section>
+
+<form id="wizard">
+<section class="step active" data-step="1">
+<h1>Your Primary Goal</h1>
+<p class="lead">What brings you to our translation service today?</p>
+<div class="field-label">How would you best describe your goal? <span>*</span></div>
+<div class="cards" data-group="goal">
+<button class="choice-card" type="button" data-value="en-vn"><span class="choice-icon">文</span><span><strong>English → Vietnamese</strong><small>Translate English text, messages, or documents into Vietnamese.</small></span></button>
+<button class="choice-card" type="button" data-value="vn-en"><span class="choice-icon">文</span><span><strong>Vietnamese → English</strong><small>Translate Vietnamese text, messages, or documents into English.</small></span></button>
+<button class="choice-card" type="button" data-value="both"><span class="choice-icon">↔</span><span><strong>Both languages</strong><small>Use English and Vietnamese translation in both directions.</small></span></button>
+<button class="choice-card" type="button" data-value="conversation"><span class="choice-icon">•••</span><span><strong>Conversation translation</strong><small>Translate messages and everyday conversations between two languages.</small></span></button>
+<button class="choice-card" type="button" data-value="travel"><span class="choice-icon">⌖</span><span><strong>Travel &amp; everyday life</strong><small>Get help understanding signs, services, places, and daily communication.</small></span></button>
+</div>
+</section>
+
+<section class="step" data-step="2">
+<h1>Language &amp; Usage</h1>
+<p class="lead">Tell us how you plan to use the translator</p>
+<div class="field-label">Your Main Use <span class="optional">(Optional)</span></div>
+<div class="pills" data-group="use">
+<button class="pill" type="button" data-value="chat">Chat &amp; messages</button>
+<button class="pill" type="button" data-value="travel">Travel</button>
+<button class="pill" type="button" data-value="work">Work</button>
+<button class="pill" type="button" data-value="documents">Documents</button>
+<button class="pill" type="button" data-value="study">Study</button>
+</div>
+<div class="field-label">Preferred Input <span class="optional">(Optional)</span></div>
+<div class="pills" data-group="input">
+<button class="pill" type="button" data-value="text">Text</button>
+<button class="pill" type="button" data-value="voice">Voice</button>
+<button class="pill" type="button" data-value="both">Text + Voice</button>
+</div>
+<div class="field-label">Your Telegram username <span class="optional">(Optional)</span></div>
+<div class="input-wrap"><span class="input-prefix">@</span><input id="telegram" type="text" placeholder="username"></div>
+</section>
+
+<section class="step" data-step="3">
+<h1>Contact Information</h1>
+<p class="lead">How can we reach you?</p>
+<div class="contact-card"><div class="contact-icon">TG</div><div><strong>Telegram</strong><p>Your Telegram account is automatically linked to this submission.</p></div></div>
+<div class="field-label">Contact Email <span class="optional">(Optional)</span></div>
+<div class="input-wrap"><span class="input-icon">✉</span><input id="email" type="email" placeholder="your@email.com"></div>
+<p class="notice">We will reach out to this email regarding your translation request.</p>
+<p class="confidential">Your information is kept private and is used only to provide the requested translation service.</p>
+</section>
+
+<div class="actions"><button class="back-btn" id="backBtn" type="button">Back</button><button class="continue-btn" id="continueBtn" type="button">Continue</button></div>
+</form>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
