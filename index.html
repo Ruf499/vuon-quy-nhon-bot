@@ -1,86 +1,455 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Vuon Quy Nhơn</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<main class="app-shell">
-<header class="topbar">
-<div><div class="brand">Vuon Quy Nhơn</div><div class="subtitle">Translation &amp; Language Form</div></div>
-<button class="lang-switch" id="langSwitch" type="button"><span class="active">EN</span><span>VN</span></button>
-</header>
-<section class="progress-row"><span id="stepLabel">Step 1 of 3</span><span id="progressLabel">33% completed</span></section>
-
-<form id="wizard">
-<section class="step active" data-step="1">
-<h1>Your Primary Goal</h1>
-<p class="lead">What brings you to our translation service today?</p>
-<div class="field-label">How would you best describe your goal? <span>*</span></div>
-<div class="cards" data-group="goal">
-<button class="choice-card" type="button" data-value="en-vn"><span class="choice-icon">文</span><span><strong>Pitch my startup</strong><small>Looking for incubator funding, mentorship, or market expansion in Vietnam.</small></span></button>
-<button class="choice-card" type="button" data-value="vn-en"><span class="choice-icon">文</span><span><strong>Looking for a job</strong><small>Ready to join a funded startup or tech team as a contributor.</small></span></button>
-<button class="choice-card" type="button" data-value="both"><span class="choice-icon">↔</span><span><strong>Take startup creation course</strong><small>Listen to our practical course on how startups are founded, validated, and built.</small></span></button>
-<button class="choice-card" type="button" data-value="conversation"><span class="choice-icon">•••</span><span><strong>Want to help the club</strong><small>Contribute as an investor, grant provider, organizer, or community partner.</small></span></button>
-<button class="choice-card" type="button" data-value="travel"><span class="choice-icon">⌖</span><span><strong>Both (Startup + Part-time)</strong><small>Building my venture while open to freelance or part-time roles.</small></span></button>
-</div>
-</section>
-
-<section class="step" data-step="2">
-<h1>Talent &amp; Skills</h1>
-<p class="lead">Tell us about your background</p>
-<div class="field-label">Your Primary Skill</div>
-<div class="pills" data-group="use">
-<button class="pill" type="button" data-value="chat">Engineering / Dev</button>
-<button class="pill" type="button" data-value="travel">Marketing & Growth</button>
-<button class="pill" type="button" data-value="work">Sales & BD</button>
-<button class="pill" type="button" data-value="documents">Operations & Management</button>
-<button class="pill" type="button" data-value="study">UI/UX Design</button>
-</div>
-<div class="field-label">Preferred Input <span class="optional">(Optional)</span></div>
-<div class="pills" data-group="input">
-<button class="pill" type="button" data-value="text">Vietnam (Full-time)</button>
-<button class="pill" type="button" data-value="voice">Vietnam (Part-time)</button>
-<button class="pill" type="button" data-value="both">Remote (Full-time)</button>
-<button class="pill" type="button" data-value="both">Remote (Part-time)</button>
-</div>
-<div class="field-label">Your Telegram username <span class="optional">(Optional)</span></div>
-<div class="input-wrap"><span class="input-prefix">@</span><input id="telegram" type="text" placeholder="username"></div>
-<div class="field-label">
-  Link to CV, LinkedIn or Portfolio <span class="optional">(Optional)</span>
-</div>
-
-<div class="file-upload">
-  <input
-    id="portfolioFile"
-    type="file"
-    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
-  <label for="portfolioFile" class="file-upload-button">
-    <span class="file-icon">↑</span>
-    <span>
-      <strong>Choose file</strong>
-      <small id="fileName">PDF, DOC, DOCX, JPG or PNG</small>
-    </span>
-  </label>
-</div>
-</section>
 
-<section class="step" data-step="3">
-<h1>Contact Information</h1>
-<p class="lead">How can we reach you?</p>
-<div class="contact-card"><div class="contact-icon">TG</div><div><strong>Telegram</strong><p>Your Telegram account is automatically linked to this submission.</p></div></div>
-<div class="field-label">Contact Email <span class="optional">(Optional)</span></div>
-<div class="input-wrap"><span class="input-icon">✉</span><input id="email" type="email" placeholder="your@email.com"></div>
-<p class="notice">We will reach out to this email regarding your translation request.</p>
-<p class="confidential">Your information is kept private and is used only to provide the requested translation service.</p>
-</section>
+  <title>Vuon Quy Nhơn</title>
 
-<div class="actions"><button class="back-btn" id="backBtn" type="button">Back</button><button class="continue-btn" id="continueBtn" type="button">Continue</button></div>
-</form>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app-shell">
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <div>
+      <div class="brand">Vuon Quy Nhơn</div>
+      <div class="subtitle">Translation &amp; Language Form</div>
+    </div>
+
+    <button
+      class="lang-switch"
+      id="langSwitch"
+      type="button"
+    >
+      <span class="active">EN</span>
+      <span>VN</span>
+    </button>
+
+  </header>
+
+
+  <!-- PROGRESS -->
+  <section class="progress-row">
+    <span id="stepLabel">Step 1 of 3</span>
+    <span id="progressLabel">33% completed</span>
+  </section>
+
+
+  <!-- FORM -->
+  <form id="wizard">
+
+    <!-- ========================= -->
+    <!-- STEP 1 -->
+    <!-- ========================= -->
+
+    <section
+      class="step active"
+      data-step="1"
+    >
+
+      <h1>Your Primary Goal</h1>
+
+      <p class="lead">
+        What brings you to our translation service today?
+      </p>
+
+      <div class="field-label">
+        How would you best describe your goal?
+        <span>*</span>
+      </div>
+
+
+      <div
+        class="cards"
+        data-group="goal"
+      >
+
+        <button
+          class="choice-card"
+          type="button"
+          data-value="en-vn"
+        >
+          <span class="choice-icon">文</span>
+
+          <span>
+            <strong>English → Vietnamese</strong>
+
+            <small>
+              Translate English text into Vietnamese.
+            </small>
+          </span>
+        </button>
+
+
+        <button
+          class="choice-card"
+          type="button"
+          data-value="vn-en"
+        >
+          <span class="choice-icon">文</span>
+
+          <span>
+            <strong>Vietnamese → English</strong>
+
+            <small>
+              Translate Vietnamese text into English.
+            </small>
+          </span>
+        </button>
+
+
+        <button
+          class="choice-card"
+          type="button"
+          data-value="both"
+        >
+          <span class="choice-icon">↔</span>
+
+          <span>
+            <strong>Both languages</strong>
+
+            <small>
+              I need translation in both directions.
+            </small>
+          </span>
+        </button>
+
+
+        <button
+          class="choice-card"
+          type="button"
+          data-value="conversation"
+        >
+          <span class="choice-icon">•••</span>
+
+          <span>
+            <strong>Conversation translation</strong>
+
+            <small>
+              Help me communicate with Vietnamese speakers.
+            </small>
+          </span>
+        </button>
+
+
+        <button
+          class="choice-card"
+          type="button"
+          data-value="travel"
+        >
+          <span class="choice-icon">⌖</span>
+
+          <span>
+            <strong>Travel &amp; everyday life</strong>
+
+            <small>
+              Translation for daily life, travel and local situations.
+            </small>
+          </span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- STEP 2 -->
+    <!-- ========================= -->
+
+    <section
+      class="step"
+      data-step="2"
+    >
+
+      <h1>Language &amp; Usage</h1>
+
+      <p class="lead">
+        Tell us how you plan to use the service
+      </p>
+
+
+      <!-- USE -->
+      <div class="field-label">
+        Main Use
+      </div>
+
+      <div
+        class="pills"
+        data-group="use"
+      >
+
+        <button
+          class="pill"
+          type="button"
+          data-value="chat"
+        >
+          Chat &amp; messages
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-value="travel"
+        >
+          Travel
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-value="work"
+        >
+          Work
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-value="documents"
+        >
+          Documents
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-value="study"
+        >
+          Study
+        </button>
+
+      </div>
+
+
+      <!-- INPUT -->
+      <div class="field-label">
+        Preferred Input
+        <span class="optional">(Optional)</span>
+      </div>
+
+      <div
+        class="pills"
+        data-group="input"
+      >
+
+        <button
+          class="pill"
+          type="button"
+          data-value="text"
+        >
+          Text
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-value="voice"
+        >
+          Voice
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-value="text-voice"
+        >
+          Text + Voice
+        </button>
+
+      </div>
+
+
+      <!-- TELEGRAM -->
+      <div class="field-label">
+        Your Telegram username
+        <span class="optional">(Optional)</span>
+      </div>
+
+      <div class="input-wrap">
+
+        <span class="input-prefix">@</span>
+
+        <input
+          id="telegram"
+          type="text"
+          placeholder="username"
+          autocomplete="username"
+        >
+
+      </div>
+
+
+      <!-- FILE -->
+      <div class="field-label">
+
+        Link to CV, LinkedIn or Portfolio
+
+        <span class="optional">
+          (Optional)
+        </span>
+
+      </div>
+
+
+      <div class="file-upload">
+
+        <input
+          id="portfolioFile"
+          type="file"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+        >
+
+        <label
+          for="portfolioFile"
+          class="file-upload-button"
+        >
+
+          <span class="file-icon">
+            ↑
+          </span>
+
+          <span>
+
+            <strong>
+              Choose file
+            </strong>
+
+            <small id="fileName">
+              PDF, DOC, DOCX, JPG or PNG
+            </small>
+
+          </span>
+
+        </label>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- STEP 3 -->
+    <!-- ========================= -->
+
+    <section
+      class="step"
+      data-step="3"
+    >
+
+      <h1>Contact Information</h1>
+
+      <p class="lead">
+        How can we reach you?
+      </p>
+
+
+      <!-- TELEGRAM CARD -->
+      <div class="contact-card">
+
+        <div class="contact-icon">
+          TG
+        </div>
+
+        <div>
+
+          <strong>
+            Telegram
+          </strong>
+
+          <p>
+            Your Telegram account is automatically linked to this submission.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- EMAIL -->
+      <div class="field-label">
+
+        Contact Email
+
+        <span class="optional">
+          (Optional)
+        </span>
+
+      </div>
+
+
+      <div class="input-wrap">
+
+        <span class="input-icon">
+          ✉
+        </span>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="your@email.com"
+          autocomplete="email"
+        >
+
+      </div>
+
+
+      <p class="notice">
+        We will reach out to this email regarding your translation request.
+      </p>
+
+
+      <p class="confidential">
+        Your information is kept private and is used only to provide the requested translation service.
+      </p>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- ACTION BUTTONS -->
+    <!-- ========================= -->
+
+    <div class="actions">
+
+      <button
+        class="back-btn"
+        id="backBtn"
+        type="button"
+        hidden
+      >
+        Back
+      </button>
+
+
+      <button
+        class="continue-btn"
+        id="continueBtn"
+        type="button"
+      >
+        Continue
+      </button>
+
+    </div>
+
+  </form>
+
 </main>
+
+
+<!-- TELEGRAM MINI APP SDK -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<!-- APPLICATION -->
 <script src="app.js"></script>
+
 </body>
 </html>
